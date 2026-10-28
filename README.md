@@ -42,6 +42,42 @@ Customer_Churn_Retention_Project_v4/
 ├── DATA_DICTIONARY.md
 └── README.md
 ```
+## Dataset
+
+The generated dataset is distributed separately from the source code to keep the Git repository lightweight.
+
+The dataset includes:
+- **Clean baseline data** — generated customer records and related tables.
+- **Anomaly-injected data** — records containing the required anomaly scenarios for validation.
+- **JSONL exports** — JSON Lines versions of the clean baseline tables.
+- **Database and metadata** — SQLite database, configuration, generation summary, manifests, and validation reports.
+
+### Download the dataset
+
+Download the dataset archives from the [GitHub Releases](https://github.com/vamsiandavarapu/customer-churn-retention/releases) page.
+
+Download the required archive files and extract them into the project root, preserving the `generated_data_20000` directory structure expected by the scripts.
+
+After extraction, the expected structure is:
+
+```text
+generated_data_20000/
+├── clean_baseline/
+├── anomaly_injected/
+├── jsonl_clean_baseline/
+├── customer_churn_clean.sqlite
+├── config.json
+└── generation_summary.json
+```
+
+The exact files included in each archive are described by the archive names. Check that all required archives have been downloaded and extracted before running the validation scripts.
+
+### Generate the dataset locally
+
+Alternatively, use the project's data-generation script and the configuration documented in this repository to regenerate the synthetic data. Run the validation scripts afterward to check the generated outputs.
+
+The dataset is synthetic and does not represent real customers or actual business outcomes.
+
 
 ## Install and run on Windows
 
