@@ -1,0 +1,51 @@
+{
+  "experiment_id": "EXP-2026-RETENTION",
+  "analysis_unit": "assigned customer (intention-to-treat)",
+  "n_assigned": 4100,
+  "unique_customers": 4100,
+  "complete_follow_up_rate": 1.0,
+  "groups": {
+    "CONTROL": {
+      "n": 2065,
+      "retained": 1833,
+      "retention_rate": 0.8876513317191284,
+      "retention_ci95": [
+        0.8740305757450622,
+        0.9012720876931946
+      ],
+      "mean_margin_inr": 1019.3730847457626,
+      "mean_offer_cost_inr": 0.0,
+      "mean_campaign_cost_inr": 0.0,
+      "delivery_rate": null,
+      "response_rate": null
+    },
+    "TREATMENT": {
+      "n": 2035,
+      "retained": 1862,
+      "retention_rate": 0.914987714987715,
+      "retention_ci95": [
+        0.9028699551513213,
+        0.9271054748241088
+      ],
+      "mean_margin_inr": 1054.6232530712532,
+      "mean_offer_cost_inr": 108.66678132678132,
+      "mean_campaign_cost_inr": 15.0,
+      "delivery_rate": 0.9223587223587224,
+      "response_rate": 0.11547911547911548
+    }
+  },
+  "retention_lift_percentage_points": 2.7336383268586673,
+  "retention_lift_ci95_percentage_points": [
+    0.9105500219277824,
+    4.5567266317895525
+  ],
+  "incremental_margin_inr_per_customer": 35.25016832549056,
+  "incremental_cost_inr_per_customer": 123.66678132678132,
+  "descriptive_net_value_difference_inr_per_customer": -88.41661300129078,
+  "limitations": [
+    "Synthetic data only.",
+    "Approximate Wald confidence interval.",
+    "Validate randomization, attribution, and consistent margin windows before business decisions.",
+    "Do not filter primary analysis by delivery or response."
+  ]
+}

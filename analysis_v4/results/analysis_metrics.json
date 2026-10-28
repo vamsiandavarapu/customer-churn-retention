@@ -1,0 +1,68 @@
+{
+  "dataset": "generated_data_20000/clean_baseline",
+  "target": "churn within 60 days after prediction date",
+  "features_used": [
+    "region",
+    "customer_segment",
+    "seasonal_user_flag",
+    "sessions_30d",
+    "usage_minutes_30d",
+    "days_since_last_use",
+    "tenure_days",
+    "failed_payments_90d",
+    "support_case_count_18m"
+  ],
+  "excluded_feature_note": "risk_score omitted from primary model because it is a heuristic derived from overlapping feature inputs.",
+  "split_rules": {
+    "train": "prediction_date <= 2025-10-01",
+    "validation": "2025-11-01 through 2026-02-01",
+    "test": "2026-03-01 through 2026-06-01"
+  },
+  "metrics": {
+    "train": {
+      "split": "train",
+      "rows": 191912,
+      "positive_labels": 3572,
+      "prevalence": 0.01861269748634791,
+      "roc_auc": 0.55160404344862,
+      "average_precision": 0.0224086345598919,
+      "precision_at_5_percent": 0.026156731971654856,
+      "lift_at_5_percent": 1.40531655827106,
+      "precision_threshold_0_5": 0.021888544537584483,
+      "recall_threshold_0_5": 0.5358342665173572,
+      "brier_score": 0.24820974988268454
+    },
+    "validation": {
+      "split": "validation",
+      "rows": 71813,
+      "positive_labels": 1341,
+      "prevalence": 0.018673499227159426,
+      "roc_auc": 0.552078362589139,
+      "average_precision": 0.02287197050260561,
+      "precision_at_5_percent": 0.028961292119186854,
+      "lift_at_5_percent": 1.5509301051119804,
+      "precision_threshold_0_5": 0.021298331424325915,
+      "recall_threshold_0_5": 0.5130499627143923,
+      "brier_score": 0.25204546358817526
+    },
+    "test": {
+      "split": "test",
+      "rows": 69172,
+      "positive_labels": 1330,
+      "prevalence": 0.019227433065402186,
+      "roc_auc": 0.5747396261060363,
+      "average_precision": 0.02385927320477961,
+      "precision_at_5_percent": 0.027464585140213934,
+      "lift_at_5_percent": 1.428406228059307,
+      "precision_threshold_0_5": 0.023710984652526298,
+      "recall_threshold_0_5": 0.6203007518796992,
+      "brier_score": 0.2597905730085443
+    }
+  },
+  "limitations": [
+    "Synthetic data only; results do not establish real-world predictive performance.",
+    "The data-generating process may be simpler than real customer behavior.",
+    "Threshold 0.5 is not a business decision threshold; ranking and lift metrics are included because churn is rare.",
+    "No production deployment or operational benefit is claimed."
+  ]
+}
